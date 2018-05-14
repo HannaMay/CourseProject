@@ -6,32 +6,34 @@
         xmlns:local="clr-namespace:CP_WPF.View"
         mc:Ignorable="d"
         Title="MainMenuxaml"
-        Width="950" 
-	    Height="650"
+        Width="1150" 
+	    Height="750"
 	    MinWidth="950" 
-	    MinHeight="650" 
+	    MinHeight="750" 
 	    FontFamily="Modern №20"
 	    FontSize="16"
         WindowStyle="None"
         AllowsTransparency="true"
         AllowDrop="True"
-        Icon="../Resources/Image/IconFox.png">
+        Icon="../Resources/Image/IconFox.png"    
+        WindowStartupLocation="CenterScreen" 
+        ResizeMode="NoResize">
 
     <Grid x:Name="MainSheets" Background="#FF0D302E">
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.3*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.07*" />
-            <RowDefinition Height="0.11*"/>
-            <RowDefinition Height="0.11*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
 
-        <StackPanel  HorizontalAlignment="Right"  Orientation="Horizontal" Grid.ColumnSpan="2">
+        <StackPanel  HorizontalAlignment="Right"  Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Row="0">
             <Border  Margin="3" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Button x:Name="ButtonMinimaze" Click="ButtonMinimaze_Click" Width="15" Height="15"  VerticalAlignment="Top" HorizontalAlignment="Right" Margin="5" 
                     Background="Transparent" FontFamily="Modern No. 20" BorderThickness="0" Foreground="White" FontSize="16" Cursor="Hand" ToolTip="Minimaze">
@@ -43,8 +45,8 @@
                     <Image Source="/Resources/Image/MinimazeWhite.png" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Button>
             </Border>
-            <Border  Margin="3" VerticalAlignment="Center" HorizontalAlignment="Right">
-                <Button x:Name="ButtonMultiTab" Click="ButtonMultiTab_Click" Width="15" Height="15"  VerticalAlignment="Top" HorizontalAlignment="Right" 
+            <Border  Margin="3" VerticalAlignment="Center" HorizontalAlignment="Right" Visibility="Visible">
+                <Button x:Name="ButtonMultiTabUp" Click="ButtonMultiTabUp_Click" Width="15" Height="15"  VerticalAlignment="Top" HorizontalAlignment="Right" 
                     Background="Transparent" BorderThickness="0" Margin="5" Foreground="White" FontSize="16" Cursor="Hand" ToolTip="Minimaze">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -54,8 +56,19 @@
                     <Image Source="/Resources/Image/MultiTabWhite.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Button>
             </Border>
+            <Border  Margin="3" VerticalAlignment="Center" HorizontalAlignment="Right">
+                <Button x:Name="ButtonMultiTabDown" Click="ButtonMultiTabDown_Click" Width="15" Height="15"  VerticalAlignment="Top" HorizontalAlignment="Right" 
+                    Background="Transparent" BorderThickness="0" Margin="5" Foreground="White" FontSize="16" Cursor="Hand" ToolTip="Minimaze" Visibility="Collapsed">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <ContentPresenter Content="{TemplateBinding Content}"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <Image Source="/Resources/Image/MultiTabWhite.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Button>
+            </Border>
             <Border Margin="3" VerticalAlignment="Center" HorizontalAlignment="Right">
-                <Button x:Name="ButtonClose" Click="ButtonClose_Click" Width="15" Height="15"  VerticalAlignment="Top" HorizontalAlignment="Right" Margin="5 5 7 5" 
+                <Button x:Name="ButtonClose" Click="ButtonClose_Click" Width="15" Height="15"  VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 5 5 5" 
                     Background="Transparent" FontFamily="Modern No. 20" BorderThickness="0" Foreground="White" FontSize="16" Cursor="Hand" ToolTip="Close">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -67,18 +80,8 @@
             </Border>
         </StackPanel>
 
-        <StackPanel x:Name="MainNavBtn" Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
-            <Border Margin="10" Width="25" Height="25" Background="Transparent">
-                <Button x:Name="MainBtnLogIn" Background="Transparent" ToolTip="Log in/Sign up" Click="ButtonLogInOpen_Click">
-                    <Button.Template>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <ContentPresenter Content="{TemplateBinding Content}"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                    <Image Source="/Resources/Image/UserWhite.png"/>
-                </Button>
-            </Border>
-            <Border Cursor="Hand" Margin="0 15 15 15" Width="25" Height="25" Padding="2">
+        <StackPanel x:Name="MainNavBtn" Grid.Row="1" Grid.Column="0" Orientation="Horizontal">            
+            <Border Cursor="Hand" Margin="15 15 15 15" Width="25" Height="25" Padding="2">
                 <Button  x:Name="MainBtnToolbarOpen" Background="Transparent" Click="ButtonMenuOpen_Click" ToolTip="Open menu">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
@@ -99,64 +102,15 @@
                 </Button>
             </Border>
         </StackPanel>
-
-        <StackPanel x:Name="MainNavFirstPart" Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Panel.ZIndex="1">
-            <Border x:Name="MainBtnFilm" Cursor="Hand" Margin="20" VerticalAlignment="Center">
-                <Button Background="Transparent" Foreground="White" Content="Film">
-                    <Button.Template>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <ContentPresenter Content="{TemplateBinding Content}"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-            </Border>
-            <Border x:Name="MainBtnConcert" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" Margin="20">
-                <Button Background="Transparent" Foreground="White" Content="Concert"  Padding="15">
-                    <Button.Template>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <ContentPresenter Content="{TemplateBinding Content}"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-            </Border>
-            <Border x:Name="MainBtnExhibition" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" Margin="20">
-                <Button Background="Transparent" Foreground="White" Content="Exhibition"  Padding="15">
-                    <Button.Template>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <ContentPresenter Content="{TemplateBinding Content}"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-            </Border>
-            <Border x:Name="MainBtnQuest" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" Margin="20">
-                <Button Background="Transparent" Foreground="White" Content="Quest"  Padding="15">
-                    <Button.Template>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <ContentPresenter Content="{TemplateBinding Content}"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-            </Border>
-            <Border x:Name="MainBtnOther" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" Margin="20">
-                <Button Background="Transparent" Foreground="White" Content="Other"  Padding="15">
-                    <Button.Template>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <ContentPresenter Content="{TemplateBinding Content}"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-            </Border>
-            <Border x:Name="MainBtnFree" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" Margin="20">
-                <Button Background="Transparent" Foreground="White" Content="Free"  Padding="15">
-                    <Button.Template>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <ContentPresenter Content="{TemplateBinding Content}"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-            </Border>
-            <Border x:Name="MainBtnDropDown" Cursor="Hand" Margin="15 15 0 15" Width="20" Height="20">
-                <Button Background="Transparent" ToolTip="Open an additional panel" Click="ButtonPanelOpen_Click">
+        
+        <Grid x:Name="PirstPart" Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="1" x:Name="MainBtnDropDown"  Cursor="Hand" Margin="0" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button  Background="Transparent" ToolTip="Open an additional panel" Click="ButtonPanelOpen_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <ContentPresenter Content="{TemplateBinding Content}"/>
@@ -165,38 +119,8 @@
                     <Image Source="/Resources/Image/DropDownWhite.png"/>
                 </Button>
             </Border>
-        </StackPanel>
-
-        <StackPanel x:Name="MainNavSencondPart" Background="#FF0D302E" Orientation="Horizontal" Grid.Column="1" Panel.ZIndex="2" Grid.Row="2" Visibility="Collapsed">
-            <Border x:Name="MainBtnCinema" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" Margin="20">
-                <Button Background="Transparent" Foreground="White" Content="Cinema"  Padding="15">
-                    <Button.Template>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <ContentPresenter Content="{TemplateBinding Content}"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-            </Border>
-            <Border x:Name="MainBtnTheater" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" Margin="20">
-                <Button Background="Transparent" Foreground="White" Content="Theater"  Padding="15">
-                    <Button.Template>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <ContentPresenter Content="{TemplateBinding Content}"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-            </Border>
-            <Border x:Name="MainBtnMuseum" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" Margin="20">
-                <Button Background="Transparent" Foreground="White" Content="Museum"  Padding="15">
-                    <Button.Template>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <ContentPresenter Content="{TemplateBinding Content}"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-            </Border>
-            <Border x:Name="MainBtnDropUp" Cursor="Hand" Margin="15 15 0 15" Width="20" Height="20">
-                <Button Background="Transparent" ToolTip="Close an additional panel" Click="ButtonPanelClose_Click">
+            <Border  x:Name="MainBtnDropUp" Grid.Column="1" Cursor="Hand" Margin="0" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed">
+                <Button  Background="Transparent" ToolTip="Close an additional panel" Click="ButtonPanelClose_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <ContentPresenter Content="{TemplateBinding Content}"/>
@@ -205,9 +129,113 @@
                     <Image Source="/Resources/Image/DropUpWhite.png"/>
                 </Button>
             </Border>
-        </StackPanel>
+            <Border Grid.Column="2" Margin="10" Width="25" Height="25" Background="Transparent">
+                <Button x:Name="MainBtnLogIn" Background="Transparent" ToolTip="Log in/Sign up" Click="ButtonLogInOpen_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <ContentPresenter Content="{TemplateBinding Content}"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <Image Source="/Resources/Image/UserWhite.png"/>
+                </Button>
+            </Border>
+        </Grid>
 
-        <StackPanel x:Name="ToolbarPanel" Grid.RowSpan="2" Grid.Column="0" Background="#FF0D302E" Orientation="Vertical" Grid.Row="2" Margin="-220,0,220,0">
+        <Border x:Name="MainNavFirstPart" BorderThickness="0" Grid.Row="1" Grid.Column="1">
+            <StackPanel Orientation="Horizontal" Panel.ZIndex="1" >
+                <Border x:Name="MainBtnFilm" Cursor="Hand" Margin="20" VerticalAlignment="Center">
+                    <Button x:Name="MainBtnFilms" Click="MainBtnFilms_Click" Background="Transparent" Foreground="White" Content="Film">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Border>
+                <Border x:Name="MainBtnConcert" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" Margin="20">
+                    <Button Background="Transparent" Foreground="White" Content="Concert"  Padding="15">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Border>
+                <Border x:Name="MainBtnExhibition" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" Margin="20">
+                    <Button Background="Transparent" Foreground="White" Content="Exhibition"  Padding="15">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Border>
+                <Border x:Name="MainBtnQuest" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" Margin="20">
+                    <Button Background="Transparent" Foreground="White" Content="Quest"  Padding="15">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Border>
+                <Border x:Name="MainBtnOther" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" Margin="20">
+                    <Button Background="Transparent" Foreground="White" Content="Other"  Padding="15">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Border>
+                <Border x:Name="MainBtnFree" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" Margin="20">
+                    <Button Background="Transparent" Foreground="White" Content="Free" Padding="15">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Border>
+            </StackPanel>
+        </Border>
+
+        <Border x:Name="MainNavSencondPart" BorderThickness="0" Grid.Column="1" Grid.Row="2" Panel.ZIndex="2" Visibility="Collapsed" >
+            <StackPanel Background="#FF0D302E" Orientation="Horizontal" >
+                <Border x:Name="MainBtnCinema" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" Margin="20">
+                    <Button x:Name="Cinema" Background="Transparent" Click="Cinema_Click" Foreground="White" Content="Cinema"  Padding="15">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Border>
+                <Border x:Name="MainBtnTheater" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" Margin="20">
+                    <Button Background="Transparent" Foreground="White" Content="Theater"  Padding="15">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Border>
+                <Border x:Name="MainBtnMuseum" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" Margin="20">
+                    <Button Background="Transparent" Foreground="White" Content="Museum"  Padding="15">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Border>
+
+            </StackPanel>
+        </Border>
+       
+
+
+        <StackPanel x:Name="ToolbarPanel" Grid.RowSpan="2" Grid.Column="0" Background="#FF0D302E" Orientation="Vertical" Grid.Row="2" Panel.ZIndex="5" Margin="-224,0,224,0">
             <StackPanel Orientation="Horizontal">
                 <Border CornerRadius="35" Margin="20 20 5 20" Width="60" Height="60" Background="Transparent" Padding="5">
                     <Ellipse Width="50" Height="50" HorizontalAlignment="Left">
@@ -283,6 +311,12 @@
             </StackPanel>
         </StackPanel>
 
-        <Grid x:Name="GridSpaceInfo" Grid.Row="2" Background="White" Grid.RowSpan="2" Grid.ColumnSpan="2" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+
+
+        <WrapPanel x:Name="GridSpaceInfo" Grid.Row="2" Background="White" Grid.RowSpan="2" Grid.ColumnSpan="2" ScrollViewer.VerticalScrollBarVisibility="Auto" >
+            
+        </WrapPanel>
     </Grid>
+
+
 </Window>

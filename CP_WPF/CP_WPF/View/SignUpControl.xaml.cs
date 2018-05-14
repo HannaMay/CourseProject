@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ClassLibrary;
 
 namespace CP_WPF.View
 {
@@ -31,6 +32,20 @@ namespace CP_WPF.View
         {
             win.MainWindowCP.Children.Clear();
             win.MainWindowCP.Children.Add(new LogInControl(win));
+        }
+
+        private void Btn_Click(object sender, RoutedEventArgs e)
+        {
+            User user = new User
+            {
+                Id = 1,
+                Name = "fox",
+                UserName = "hedgehog",
+                Password = "12345"
+            };
+            AsyncClient.SetUser(user);
+            AsyncClient.SetTypeInfo(TypeOfInfo.User);
+            AsyncClient.StartClient();
         }
     }
 }

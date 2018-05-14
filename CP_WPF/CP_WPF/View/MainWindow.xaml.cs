@@ -25,7 +25,6 @@ namespace CP_WPF.View
             
             MainWindowRight.Children.Add(new Logo(this));
             MainWindowCP.Children.Add(new LogInControl(this));
-            //CP_WPF.AsyncClient.StartClient();
         }
         private void ButtonMinimaze_Click(object sender, RoutedEventArgs e)
         {
@@ -36,7 +35,6 @@ namespace CP_WPF.View
         {
             SystemCommands.CloseWindow(this);
         }
-
 
 
     }

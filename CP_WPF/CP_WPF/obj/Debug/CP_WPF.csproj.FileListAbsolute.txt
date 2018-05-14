@@ -32,3 +32,44 @@ D:\Hannika\CP\CP wpf\CP_WPF\CP_WPF\bin\Debug\MaterialDesignThemes.Wpf.xml
 D:\Hannika\CP\CP wpf\CP_WPF\CP_WPF\obj\Debug\App.baml
 D:\Hannika\CP\CP wpf\CP_WPF\CP_WPF\obj\Debug\View\CardItemMoreInfo.baml
 D:\Hannika\CP\CP wpf\CP_WPF\CP_WPF\obj\Debug\CP_WPF.csproj.CopyComplete
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\bin\Debug\CP_WPF.exe.config
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\bin\Debug\CP_WPF.exe
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\bin\Debug\CP_WPF.pdb
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\bin\Debug\MaterialDesignColors.dll
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\bin\Debug\MaterialDesignColors.pdb
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\CP_WPF.csprojResolveAssemblyReference.cache
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\View\CardItem.g.cs
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\View\CardItemMoreInfo.g.cs
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\View\Logo.g.cs
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\View\MainMenuxaml.g.cs
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\View\MainWindow.g.cs
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\View\LogInControl.g.cs
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\View\SignUpControl.g.cs
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\App.g.cs
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\CP_WPF_MarkupCompile.cache
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\CP_WPF_MarkupCompile.lref
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\App.baml
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\View\CardItem.baml
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\View\CardItemMoreInfo.baml
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\View\Logo.baml
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\View\MainMenuxaml.baml
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\View\MainWindow.baml
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\View\LogInControl.baml
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\View\SignUpControl.baml
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\CP_WPF.g.resources
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\CP_WPF.Properties.Resources.resources
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\CP_WPF.csproj.GenerateResource.cache
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\CP_WPF.csproj.CoreCompileInputs.cache
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\CP_WPF.csproj.CopyComplete
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\CP_WPF.exe
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\CP_WPF.pdb
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\bin\Debug\EntityFramework.dll
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\bin\Debug\EntityFramework.SqlServer.dll
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\bin\Debug\EntityFramework.SqlServerCompact.dll
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\bin\Debug\System.Data.SqlServerCe.dll
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\bin\Debug\EntityFramework.xml
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\bin\Debug\EntityFramework.SqlServer.xml
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\bin\Debug\EntityFramework.SqlServerCompact.xml

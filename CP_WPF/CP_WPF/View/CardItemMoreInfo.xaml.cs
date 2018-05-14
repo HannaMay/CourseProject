@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ClassLibrary;
 
 namespace CP_WPF.View
 {
@@ -22,28 +23,68 @@ namespace CP_WPF.View
     {
         public bool flag = false;
         List<Image> slidelist = new List<Image>();
-        
-        public CardItemMoreInfo()
+        MainMenuxaml win;
+
+        public CardItemMoreInfo(MainMenuxaml win, Film film)
         {
+            this.win = win;
             InitializeComponent();
-            //Uri urislide1 = new Uri("https://img.afisha.tut.by/img/865x575c/screens/0b/8/taksi-5-529789.jpg");
-            
-            Image image = new Image();
-            slidelist.Add(image);
-            //"../Resources/Image/TestImage/princes1.jpg
-        }
+            Uri urislide1 = new Uri(film.Image_Main, UriKind.RelativeOrAbsolute);
+            this.CardInfoMainImg.Source = BitmapFrame.Create(urislide1);
+            if (film.Images != "")
+            {
+                foreach (string s in FilmHandler.GetListOfImages(film.Images))
+                {
+                    Uri urislide = new Uri(s, UriKind.RelativeOrAbsolute);
+                    Image image = new Image
+                    {
+                        Source = BitmapFrame.Create(urislide)
+                    };
+                    this.Images.Children.Add(image);
+                }
+            }
+            this.EventNameCardMoreInfo.Text = film.Name;
+            List<string> list = FilmHandler.GetListOfGenres(film.Genre);
+            foreach (string s in list)
+            {
+                if (s == list.Last())
+                {
+                    this.GenresCardMoreInfo.Text += s;
+                    break;
+                }
+                this.GenresCardMoreInfo.Text += s + ", ";
+            }
+            if (film.Country != null)
+            {
+                if (!film.Country.Equals(""))
+                {
+                    if (film.Country[0] == ' ')
+                    {
+                        film.Country = film.Country.Remove(0, 1);
+                    }
+                }
+                this.YearCardMoreInfo.Text = film.Country;
+            }
+            this.CountryCardMoreInfo.Text = film.Country;
+            this.DescriptionCardMoreInfo.Text = film.Info;
+            this.RatingCardMoreInfo.Text = film.Rating;
+            this.TimeCardMoreInfo.Text = film.Duration;
+        }        
 
         private void PreviousSlide(object sender, RoutedEventArgs e)
         {
             flag = true;
-            Slide1.Visibility = Visibility.Collapsed;
-            Slide2.Visibility = Visibility.Visible;
+            
+            //Slide1.Visibility = Visibility.Collapsed;
+            //Slide5.Visibility = Visibility.Visible;
             
         }
 
         private void NextSlide(object sender, RoutedEventArgs e)
         {
-
+            flag = true;
+            //Slide1.Visibility = Visibility.Collapsed;
+            //Slide2.Visibility = Visibility.Visible;
         }
     }
 }

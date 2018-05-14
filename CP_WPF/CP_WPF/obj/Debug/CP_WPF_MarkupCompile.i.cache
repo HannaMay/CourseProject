@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Hannika\CP\CP wpf\CP_WPF\CP_WPF\obj\Debug\
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\obj\Debug\
 CP_WPF
 none
 false
 DEBUG;TRACE
-D:\Hannika\CP\CP wpf\CP_WPF\CP_WPF\App.xaml
+D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\App.xaml
 7-1999993079
 
-171053902214
-17901091212
+17554843443
+23889087048
 View\CardItem.xaml;View\CardItemMoreInfo.xaml;View\Logo.xaml;View\MainMenuxaml.xaml;View\MainWindow.xaml;View\LogInControl.xaml;View\SignUpControl.xaml;
 
-True
+False
 

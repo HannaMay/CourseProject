@@ -30,12 +30,12 @@
 
             <StackPanel Orientation="Vertical" Margin="10 5 10 0" Height="187.94">
                 <TextBlock Margin="20,0,20,5" FontFamily="Modern No. 20" FontSize="13" 
-						RenderTransformOrigin="0.517,0.379" ><Run Text="Username or E-mail"/></TextBlock>
+						RenderTransformOrigin="0.517,0.379" ><Run Text="Username"/></TextBlock>
                 <Border CornerRadius="15" BorderThickness="1" BorderBrush="LightGray" SnapsToDevicePixels="True" Background="White" Height="30" Margin="5 0 5 0" >
                     <TextBox x:Name="Username" Background="Transparent" BorderThickness="0" Padding="5 7 25 7" Margin="10,0,18,0" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
                 </Border>
 
-                <TextBlock Margin="20,5,20,0"  FontFamily="Modern No. 20" FontSize="13" 
+                <TextBlock Margin="20,5,20,5"  FontFamily="Modern No. 20" FontSize="13" 
 						RenderTransformOrigin="0.517,0.379"><Run Text="Password"/></TextBlock>
                 <Border CornerRadius="15" BorderThickness="1" BorderBrush="LightGray" SnapsToDevicePixels="True" Background="White" Height="30" Margin="5 0 5 0">
                     <PasswordBox x:Name="Password" Background="Transparent" Margin="10,0,18,0" Padding="5 7 25 7"  BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Disabled" 

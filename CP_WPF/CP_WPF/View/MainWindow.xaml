@@ -15,7 +15,9 @@
         MaxWidth="1024"         
         WindowStyle="None"
         AllowDrop="True"
-        Icon="../Resources/Image/IconFox.png">
+        Icon="../Resources/Image/IconFox.png"
+        WindowStartupLocation="CenterScreen" 
+        ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>

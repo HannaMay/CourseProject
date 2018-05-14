@@ -17,16 +17,16 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-
+    <Viewbox>
     <Grid  Background="#FFFDFDFD">
-        <materialDesign:Card Width="180">
+        <materialDesign:Card Width="200" Height="330" Margin="10 10 10 3">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="150" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <Image Source="../Resources/Image/pion.jpg"  Stretch="UniformToFill" />
+                <Image Name="MainImage" Source="../Resources/Image/pion.jpg"  Stretch="UniformToFill" />
                 <Border Grid.Row="0" CornerRadius="30" Background="#FF175551" Width="30" Height="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 -20 7 -10" >
                     <Button  HorizontalAlignment="Center"  VerticalAlignment="Center">
                         <materialDesign:PackIcon Kind="Star" Foreground="White" Width="26" Height="26"/>
@@ -38,19 +38,19 @@
                     </Button>
                 </Border>
                 <StackPanel Grid.Row="1" Margin="5 10 5 0">
-                    <TextBlock FontWeight="Bold" TextWrapping="Wrap" FontSize="20" Padding="0" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <TextBlock Name="EventName" FontWeight="Bold" TextWrapping="Wrap" FontSize="20" Padding="0" VerticalAlignment="Top" HorizontalAlignment="Left">
                         <Run Text="Event Name" />                       
                     </TextBlock>
-                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" FontSize="11" Margin="0 3 0 3" >
+                    <TextBlock Name="Genre" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="11" Margin="0 15 0 3" >
                         <Run Text="Fantasy, Comedy, Triller"/>
                     </TextBlock>
-                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" FontSize="11">
+                    <TextBlock Name="CountryAndYear" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="11">
                         <Run Text="USA 2018"/>
                     </TextBlock>
                 </StackPanel>
 
                 <Border x:Name="BtnMoreDetails" Grid.Row="2" Background="#FF175551" Margin="0 5 0 0" Padding="5">
-                    <Button FontSize="20" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                    <Button Click="Details_Click" x:Name="Details" FontSize="20" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" >
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <ContentPresenter Content="More details"/>
@@ -61,4 +61,7 @@
             </Grid>
         </materialDesign:Card>
     </Grid>
+   
+        
+    </Viewbox>
 </UserControl>
