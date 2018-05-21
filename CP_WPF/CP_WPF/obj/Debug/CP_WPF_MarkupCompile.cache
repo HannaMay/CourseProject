@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Hannika\CP\CP_wpf\CP_WPF\CP_WPF\App.xaml
-7-1999993079
+15-1259790670
 
-13-114350455
-23889087048
-View\CardItem.xaml;View\CardItemMoreInfo.xaml;View\Logo.xaml;View\MainMenuxaml.xaml;View\MainWindow.xaml;View\LogInControl.xaml;View\SignUpControl.xaml;
+22465458891
+21906196928
+View\CardItem.xaml;View\CardItemCinema.xaml;View\CardItemConcert.xaml;View\CardItemExhibition.xaml;View\CardItemMoreInfo.xaml;View\CardItemMoreInfoCinema.xaml;View\CardItemMoreInfoConcert.xaml;View\CardItemMoreInfoExhibition.xaml;View\Logo.xaml;View\MainMenuxaml.xaml;View\MainWindow.xaml;View\LogInControl.xaml;View\NotFound.xaml;View\Search.xaml;View\SignUpControl.xaml;
 
 False
 

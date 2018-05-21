@@ -24,13 +24,15 @@ namespace CP_WPF.View
         public bool flag = false;
         List<Image> slidelist = new List<Image>();
         MainMenuxaml win;
-
+        
         public CardItemMoreInfo(MainMenuxaml win, Film film)
         {
             this.win = win;
             InitializeComponent();
+            
             Uri urislide1 = new Uri(film.Image_Main, UriKind.RelativeOrAbsolute);
             this.CardInfoMainImg.Source = BitmapFrame.Create(urislide1);
+            
             if (film.Images != "")
             {
                 foreach (string s in FilmHandler.GetListOfImages(film.Images))
@@ -38,7 +40,12 @@ namespace CP_WPF.View
                     Uri urislide = new Uri(s, UriKind.RelativeOrAbsolute);
                     Image image = new Image
                     {
-                        Source = BitmapFrame.Create(urislide)
+
+                        Source = BitmapFrame.Create(urislide),
+                        Margin = new Thickness(0, 3, 7, 3),  
+                        Height = 200,
+                        Focusable = true                       
+                       
                     };
                     this.Images.Children.Add(image);
                 }
@@ -63,10 +70,11 @@ namespace CP_WPF.View
                         film.Country = film.Country.Remove(0, 1);
                     }
                 }
-                this.YearCardMoreInfo.Text = film.Country;
+                this.YearCardMoreInfo.Text = film.Year;
             }
             this.CountryCardMoreInfo.Text = film.Country;
             this.DescriptionCardMoreInfo.Text = film.Info;
+            this.BoxOfficeCardMoreInfo.Text = film.Date;
             this.RatingCardMoreInfo.Text = film.Rating;
             this.TimeCardMoreInfo.Text = film.Duration;
         }        
@@ -82,9 +90,42 @@ namespace CP_WPF.View
 
         private void NextSlide(object sender, RoutedEventArgs e)
         {
-            flag = true;
+            flag = true;            
             //Slide1.Visibility = Visibility.Collapsed;
             //Slide2.Visibility = Visibility.Visible;
+        }
+
+        private void AddToFavoriteOn_Click(object sender, RoutedEventArgs e)
+        {
+            FavoriteItem.Visibility = Visibility.Collapsed;
+            FavoriteItemFull.Visibility = Visibility.Visible;
+
+            flag = true;
+        }
+        private void AddToFavoriteOff_Click(object sender, RoutedEventArgs e)
+        {
+            FavoriteItemFull.Visibility = Visibility.Collapsed;
+            FavoriteItem.Visibility = Visibility.Visible;
+            flag = false;
+        }
+        private void WrittingComments_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PupupBox_Click(object sender, RoutedEventArgs e)
+        {
+            /// пользователи!!!!!!!!!!
+            if (flag == true)
+            {
+                FavoriteItem.Visibility = Visibility.Collapsed;
+                FavoriteItemFull.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                FavoriteItem.Visibility = Visibility.Collapsed;
+                FavoriteItemFull.Visibility = Visibility.Visible;
+            }
         }
     }
 }

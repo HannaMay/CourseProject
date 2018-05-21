@@ -4,53 +4,85 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CP_WPF.View"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              Height="auto" 
-             Width="auto">
+             Width="auto"
+             FontSize="14"
+             FontFamily="Rockwell">
     <Grid>
-        <StackPanel x:Name="LogInForm" Grid.Column ="1" Grid.Row="1" Background="#8BFFFFFF"  MaxWidth="400" MaxHeight="500"
-                    Width="325" HorizontalAlignment="Right" VerticalAlignment="Center" MinHeight="300" Margin="0,35,50,60">
-            <Border Background="Transparent">
-                <Button x:Name="ButtonArrowLeft" Width="25" Height="25" SnapsToDevicePixels="True"
-				HorizontalAlignment="Right" Margin="0 15 15 0" Background="Transparent" Click="ArrowSignUp">                    
+        <StackPanel x:Name="LogInForm" 
+                    Grid.Column ="1" 
+                    Grid.Row="1" 
+                    MinWidth="300"
+                    Background="#8BFFFFFF"                       
+                    HorizontalAlignment="Right" 
+                    VerticalAlignment="Center"                    
+                    Margin="0,35,50,60">
+            <Button x:Name="ButtonArrowLeft" 
+                    Width="30" 
+                    Height="30" 
+				    HorizontalAlignment="Right" 
+                    Margin="0 15 15 0" 
+                    BorderBrush="{x:Null}"
+                    Background="Transparent" 
+                    Click="ArrowSignUp">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <ContentPresenter Content="{TemplateBinding Content}"/>
                         </ControlTemplate>
                     </Button.Template>
-                    <Image Source="../Resources/Image/ArrowLeft.png"/>
-                </Button>
-            </Border>
-            <Label Height="49" Content="Log in" FontSize="32" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" 
-						FontFamily="Rockwell" Margin="20 0 "  MaxWidth="300"/>
-
-            <Label Margin="20,5,20,0" VerticalAlignment="Top" Height="29" Content="Want to sign up fill out this form!" FontFamily="Modern No. 20" 
-					FontSize="13.333" Background="#00000000" Foreground="#FF262626" RenderTransformOrigin="0.517,0.379"/>
-            <Separator Margin="20,0,20,0" VerticalAlignment="Top"  Height="12" Background="White" />
-
-            <StackPanel Orientation="Vertical" Margin="10 5 10 0" Height="187.94">
-                <TextBlock Margin="20,0,20,5" FontFamily="Modern No. 20" FontSize="13" 
-						RenderTransformOrigin="0.517,0.379" ><Run Text="Username"/></TextBlock>
-                <Border CornerRadius="15" BorderThickness="1" BorderBrush="LightGray" SnapsToDevicePixels="True" Background="White" Height="30" Margin="5 0 5 0" >
-                    <TextBox x:Name="Username" Background="Transparent" BorderThickness="0" Padding="5 7 25 7" Margin="10,0,18,0" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
+                <Image Source="../Resources/Image/ArrowLeft.png"/>
+            </Button>
+            <Label Content="Log in" 
+                   FontSize="32" 
+                   FontWeight="Bold" 
+                   HorizontalAlignment="Left"                   
+                   Margin="20 0" />
+            <Label Content="Want to sign up fill out this form!"                     
+				   Margin="20 5" />
+            <Separator Margin="20,0,20,0"   
+                       Height="12" 
+                       Background="White" />
+            <StackPanel Margin="10 5">                
+                <Border CornerRadius="15"   
+                        Background="White" 
+                        Height="45" 
+                        Margin="5 15" >
+                    <TextBox x:Name="Username" 
+                             BorderThickness="0"
+                             Padding="5 -20 0 0"
+                             MaxLength="15"
+                             Margin="10 3"
+                             Foreground="Teal"                              
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                             materialDesign:HintAssist.Hint="Username ..."/>
                 </Border>
-
-                <TextBlock Margin="20,5,20,5"  FontFamily="Modern No. 20" FontSize="13" 
-						RenderTransformOrigin="0.517,0.379"><Run Text="Password"/></TextBlock>
-                <Border CornerRadius="15" BorderThickness="1" BorderBrush="LightGray" SnapsToDevicePixels="True" Background="White" Height="30" Margin="5 0 5 0">
-                    <PasswordBox x:Name="Password" Background="Transparent" Margin="10,0,18,0" Padding="5 7 25 7"  BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Disabled" 
-							VerticalContentAlignment="Center" TabIndex="3" RenderTransformOrigin="0.5,0.5" MaxLength="13" />
+                <Border CornerRadius="15" 
+                        Background="White" 
+                        Height="45" 
+                        Margin="5 0">
+                    <PasswordBox x:Name="Password" 
+                                 Margin="10 3" 
+                                 Padding="5 -20 0 0"  
+                                 BorderThickness="0"
+                                 BorderBrush="{x:Null}"
+                                 Foreground="Teal"   
+                                 Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" 
+                                 materialDesign:HintAssist.Hint="Password ..." 
+                                 MaxLength="13" />
                 </Border>
-
-                <Border CornerRadius="20" Margin="5,35,5,0" Padding="7" Background="#FF0B1517" MinWidth="260" SnapsToDevicePixels="True"
-						VerticalAlignment="Center" HorizontalAlignment="Center" Width="286">
-                    <Button Background="Transparent" Content="Log in" FontFamily="Modern No. 20" BorderThickness="0" Foreground="White" FontSize="16" 
-							Margin="20,0,25,0" HorizontalAlignment="Center">
-                        <Button.Template>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <ContentPresenter Content="{TemplateBinding Content}"/>
-                            </ControlTemplate>
-                        </Button.Template>
+                <Border CornerRadius="20" 
+                        Margin="5,30,5,0" 
+                        Padding="7" 
+                        Background="#FF0B1517">
+                    <Button Background="Transparent" 
+                            Content="Log in"  
+                            Foreground="White" 
+                            FontSize="20" 
+							Margin="20 0" 
+                            Click="LogInBtn_Click" 
+                            BorderBrush="{x:Null}">
                     </Button>
                 </Border>
             </StackPanel>

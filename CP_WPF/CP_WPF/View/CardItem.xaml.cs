@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using System.Drawing;
 using System.Windows.Shapes;
 using ClassLibrary;
 
@@ -20,13 +21,14 @@ namespace CP_WPF.View
     {
         public Film film;
         MainMenuxaml win;
+        public bool flagFavorite = false; 
+
         public CardItem(MainMenuxaml win, Film film)
         {
             this.win = win;
             InitializeComponent();
             Uri urislide1 = new Uri(film.Image_Main, UriKind.RelativeOrAbsolute);
             this.MainImage.Source = BitmapFrame.Create(urislide1);
-
             this.EventName.Text = film.Name ?? "";
             foreach (string s in FilmHandler.GetListOfGenres(film.Genre))
             {
@@ -48,12 +50,32 @@ namespace CP_WPF.View
                 }
                 this.CountryAndYear.Text = film.Country + "\n" + film.Year;
             }
+            if(film.Date != null && !film.Date.Equals(""))
+            {                
+                this.BoxOffice.Text = film.Date;               
+            }
             this.film = film;
         }
 
         private void Details_Click(object sender, RoutedEventArgs e)
         {
             this.win.film = this.film;
+        }
+
+        /// пользователи!!!!
+        private void AddToFavorite_Click(object sender, RoutedEventArgs e)
+        {
+            AddFavOn.Visibility = Visibility.Collapsed;
+            AddFavOff.Visibility = Visibility.Visible;
+            flagFavorite = true;
+            
+        }
+
+        private void DeleteToFavorite_Click(object sender, RoutedEventArgs e)
+        {
+            AddFavOn.Visibility = Visibility.Visible;
+            AddFavOff.Visibility = Visibility.Collapsed;
+            flagFavorite = false;
         }
     }
 }

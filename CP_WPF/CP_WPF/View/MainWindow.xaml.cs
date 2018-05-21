@@ -20,9 +20,12 @@ namespace CP_WPF.View
     public partial class MainWindow : Window
     {        
         public MainWindow()
-        {            
+        {            //рабочий кп
             InitializeComponent();
-            
+
+            AsyncClient.SetTypeInfo(TypeOfInfo.Users);
+            AsyncClient.StartClient();
+
             MainWindowRight.Children.Add(new Logo(this));
             MainWindowCP.Children.Add(new LogInControl(this));
         }

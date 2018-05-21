@@ -5,24 +5,30 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CP_WPF.View"
              mc:Ignorable="d"              
-             FontFamily="Modern №20"
+             FontFamily="Rockwell"
              Height="auto"
              Width="auto" FontSize="14">
     <Grid>
         <StackPanel x:Name="LogoForm" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0 120 0 0">
-            <Label Content="Foxter" FontSize="92" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="100 0 0 0" Foreground="#FF0B1517" FontFamily="Elephant" />
-            <Border Padding="5" BorderBrush="White" MinWidth="260" SnapsToDevicePixels="True"
-				VerticalAlignment="Center" HorizontalAlignment="Center" Width="auto" BorderThickness="2">
-                <Button Margin="20 5" Background="Transparent" Content="Continue without authorization (registration)"  Foreground="White" FontSize="16" 
-					 HorizontalAlignment="Center" FontWeight="Bold" Click="ButtonMainMenuOpen_Click">
-                    <Button.Template>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <ContentPresenter Content="{TemplateBinding Content}"/>
-                        </ControlTemplate>
-                    </Button.Template>
+            <Label Content="Foxter" 
+                   FontSize="92" 
+                   FontWeight="Bold" 
+                   Margin="100 0 0 0" 
+                   Foreground="#FF0B1517" />
+            <Border Padding="5" 
+                    BorderBrush="White" 
+                    MinWidth="260" 
+                    BorderThickness="2">
+                <Button Margin="20 5" 
+                        Background="Transparent" 
+                        Content="Continue without authorization (registration)"  
+                        Foreground="White" 
+                        FontSize="16" 
+                        FontWeight="Bold" 
+                        Click="ButtonMainMenuOpen_Click" 
+                        BorderBrush="{x:Null}">                    
                 </Button>
             </Border>
         </StackPanel>
-
     </Grid>
 </UserControl>

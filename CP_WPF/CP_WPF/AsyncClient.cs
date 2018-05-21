@@ -11,7 +11,7 @@ using ClassLibrary;
 
 public enum TypeOfInfo
 {
-    Films = 1, Cinemas, Users, User
+    Default = 0, Films = 1, Cinemas, Users, User
 };
 
 public class StateObject
@@ -39,7 +39,7 @@ namespace CP_WPF
             user = src;
         }
 
-        public static TypeOfInfo TypeOfTheInfo;
+        public static volatile TypeOfInfo TypeOfTheInfo;
         private const int port = 11000;
 
         private static ManualResetEvent connectDone =
@@ -49,16 +49,18 @@ namespace CP_WPF
         private static ManualResetEvent receiveDone =
             new ManualResetEvent(false);
 
+        public static volatile bool flag = true;
         public static List<Film> films;
         public static List<Cinema> cinemas;
         public static List<User> users;
-        public static User user;
+        public static volatile User user;
+
         public static void StartClient()
         {
             try
             {
-                IPHostEntry ipHostInfo = Dns.GetHostEntry("Client1");
-                IPAddress ipAddress = ipHostInfo.AddressList[1];
+                IPHostEntry ipHostInfo = Dns.GetHostEntry("Hannika");
+                IPAddress ipAddress = ipHostInfo.AddressList[0];
                 IPEndPoint remoteEP = new IPEndPoint(ipAddress, port);
 
                 Socket client = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
@@ -66,22 +68,27 @@ namespace CP_WPF
                 client.BeginConnect(remoteEP, new AsyncCallback(ConnectCallback), client);
                 connectDone.WaitOne();
 
-                Send(client, TypeOfTheInfo.ToString());                                    //сам запрос
-                
+                if (TypeOfTheInfo == TypeOfInfo.User && !flag)
+                {
+                    flag = true;
+                    Send(client, user);
+                    TypeOfTheInfo = TypeOfInfo.Default;
+                }
+                else
+                {
+                    Send(client, TypeOfTheInfo.ToString());                                    //сам запрос
+                }
                 sendDone.WaitOne();
 
                 Receive(client);
                 receiveDone.WaitOne();
 
-                if (TypeOfTheInfo == TypeOfInfo.User)
-                {
-                    Send(client, user);
-                    sendDone.WaitOne();
-                    Receive(client);
-                    receiveDone.WaitOne();
-                }
                 client.Shutdown(SocketShutdown.Both);
                 client.Close();
+
+                connectDone.Reset();
+                sendDone.Reset();
+                receiveDone.Reset();
             }
             catch (Exception e)
             {
@@ -97,7 +104,7 @@ namespace CP_WPF
 
                 client.EndConnect(ar);
 
-                MessageBox.Show("Socket connected to " + client.RemoteEndPoint.ToString());
+                //MessageBox.Show("Socket connected to " + client.RemoteEndPoint.ToString());
 
                 connectDone.Set();
             }
@@ -128,49 +135,49 @@ namespace CP_WPF
         {
             try
             {
+                if (TypeOfTheInfo == TypeOfInfo.User)
+                {
+                    ar.AsyncWaitHandle.WaitOne(1000);
+                }
                 StateObject state = (StateObject)ar.AsyncState;
+
                 Socket client = state.workSocket;
 
-                int bytesRead = client.EndReceive(ar);
-                
-                if (bytesRead > 0)
-                {
-                    client.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0, new AsyncCallback(ReceiveCallback), state);
-                }
-                else
-                {
-                    switch (TypeOfTheInfo)
-                    {
-                        case TypeOfInfo.Films:
-                            {
-                                films = FilmHandler.ConvertByteArrayToFilmList(state.buffer);
-                                break;
-                            }
-                        case TypeOfInfo.Cinemas:
-                            {
-                                cinemas = CinemaHandler.ConvertByteArrayToCinemaList(state.buffer);
-                                break;
-                            }
-                        case TypeOfInfo.Users:
-                            {
-                                users = UserHandler.ConvertByteArrayToUserList(state.buffer);
-                                break;
-                            }
-                        case TypeOfInfo.User:
-                            {
-                                state.sb.Append(Encoding.ASCII.GetString(state.buffer, 0, state.buffer.Length));
-                                MessageBox.Show(state.sb.ToString());
-                                break;
-                            }
-                        default: break;
-                    }
+                client.EndReceive(ar);
 
-                    receiveDone.Set();
+                switch (TypeOfTheInfo)
+                {
+                    case TypeOfInfo.Films:
+                        {
+                            films = FilmHandler.ConvertByteArrayToFilmList(state.buffer);
+                            break;
+                        }
+                    case TypeOfInfo.Cinemas:
+                        {
+                            cinemas = CinemaHandler.ConvertByteArrayToCinemaList(state.buffer);
+                            break;
+                        }
+                    case TypeOfInfo.Users:
+                        {
+                            users = UserHandler.ConvertByteArrayToUserList(state.buffer);
+                            break;
+                        }
+                    case TypeOfInfo.User:
+                        {
+                            flag = false;
+                            break;
+                        }
+                    default:
+                        {
+                            break;
+                        }
                 }
+
+                receiveDone.Set();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show("error" + ex.Message);
             }
         }
 
@@ -187,14 +194,13 @@ namespace CP_WPF
 
             client.BeginSend(byteData, 0, byteData.Length, 0, new AsyncCallback(SendCallback), client);
         }
-        
+
         private static void SendCallback(IAsyncResult ar)
         {
             try
             {
                 Socket client = (Socket)ar.AsyncState;
-
-                int bytesSent = client.EndSend(ar);
+                client.EndSend(ar);
 
                 sendDone.Set();
             }

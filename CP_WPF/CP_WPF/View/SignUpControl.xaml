@@ -6,7 +6,9 @@
              xmlns:local="clr-namespace:CP_WPF.View"
              mc:Ignorable="d" 
              Height="auto" 
-             Width="auto">
+             Width="auto"
+             FontFamily="Rockwell"
+             FontSize="14">
     <Grid>
         <StackPanel x:Name="SignUpForm" Grid.Column ="1" Grid.Row="1" Background="#8BFFFFFF" MaxWidth="400" MaxHeight="500" 
                     MinHeight="450" HorizontalAlignment="Right" VerticalAlignment="Center" Height="447" Margin="0,35,50,60" >
@@ -26,8 +28,7 @@
                        FontSize="32" 
                        FontWeight="Bold" 
                        HorizontalAlignment="Left" 
-                       VerticalAlignment="Center" 
-                       FontFamily="Rockwell" 
+                       VerticalAlignment="Center"                     
                        Margin="20 0 " />
                 <Button Grid.Column="1" 
                         Grid.Row="0" 
@@ -50,53 +51,82 @@
                 
             </Grid>
 
-            <Label Margin="20,5,20,0" VerticalAlignment="Top" Height="29" Content="Want to sign up fill out this form!" FontFamily="Modern No. 20" 
-			FontSize="13.333" Foreground="#FF262626" RenderTransformOrigin="0.517,0.379" Background="#00000000"/>
-            <Separator Margin="20,0,20,0" VerticalAlignment="Top"  Height="12"/>
-
-            <StackPanel Orientation="Vertical" Margin="10 5 10 0">
-                <TextBlock Margin="20,0,20,0" FontFamily="Modern No. 20" FontSize="13" RenderTransformOrigin="0.517,0.379" >
+            <Label Margin="20,5,20,0" VerticalAlignment="Top" Height="29" Content="Want to sign up fill out this form!"/>
+            <Separator Margin="20,0,20,0" VerticalAlignment="Top" Background="White" Height="12"/>
+            <StackPanel Margin="10 5">
+                <TextBlock Margin="20 0">
                     <Run Text="Username "/>
                     <Run Foreground="Red" FontSize="18" FontWeight="Bold" Text="*"/>
                 </TextBlock>
-                <Border CornerRadius="15" BorderThickness="1" BorderBrush="LightGray" SnapsToDevicePixels="True" Background="White" Height="30" Margin="5 0 5 0" >
-                    <TextBox x:Name="Username" Background="Transparent" BorderThickness="0" Padding="25 7" Margin="15 0" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
+                <Border CornerRadius="15" Background="White" Height="35" Margin="5 0 5 0" >
+                    <TextBox x:Name="Username" 
+                             Background="Transparent" 
+                             BorderThickness="0" 
+                             Padding="25 0" 
+                             Margin="15 0" 
+                             Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
                 </Border>
 
-                <TextBlock Margin="20,0,20,0"  FontFamily="Modern No. 20" FontSize="13" 
-				RenderTransformOrigin="0.517,0.379"><Run Text="Name "/><Run Foreground="Red" FontSize="18" FontWeight="Bold" Text="*"/></TextBlock>
-                <Border CornerRadius="15" BorderThickness="1" BorderBrush="LightGray" SnapsToDevicePixels="True" Background="White" Height="30" Margin="5 0 5 0">
-                    <TextBox x:Name="Name" Background="Transparent" BorderThickness="0" Padding="25 7" Margin="15 0" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBlock Margin="20 0">
+                    <Run Text="Name "/>
+                    <Run Foreground="Red" FontSize="18" FontWeight="Bold" Text="*"/>
+                </TextBlock>
+                <Border CornerRadius="15" 
+                        Background="White" 
+                        Height="30" 
+                        Margin="5 0 5 0">
+                    <TextBox x:Name="Name" 
+                             Background="Transparent" 
+                             BorderThickness="0" 
+                             Padding="25 7" 
+                             Margin="15 0" 
+                             Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+                </Border>               
+
+                <TextBlock Margin="20 0">
+                    <Run Text="Password "/>
+                    <Run Foreground="Red" FontSize="18" FontWeight="Bold" Text="*"/>
+                </TextBlock>
+                <Border CornerRadius="15" 
+                        Background="White" 
+                        Height="30" 
+                        Margin="5 0 5 0">
+                    <PasswordBox x:Name="Password" 
+                                 Background="Transparent" 
+                                 Margin="15 0" 
+                                 Padding="25 0"  
+                                 BorderBrush="{x:Null}"/>
                 </Border>
 
-                <TextBlock Margin="20,0,20,0"  FontFamily="Modern No. 20" FontSize="13" 
-				RenderTransformOrigin="0.517,0.379"><Run Text="Password "/><Run Foreground="Red" FontSize="18" FontWeight="Bold" Text="*"/></TextBlock>
-                <Border CornerRadius="15" BorderThickness="1" BorderBrush="LightGray" SnapsToDevicePixels="True" Background="White" Height="30" Margin="5 0 5 0">
-                    <PasswordBox x:Name="Password" Background="Transparent" Margin="15 0" Padding="25 7"  BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Disabled" 
-				VerticalContentAlignment="Center" TabIndex="3" RenderTransformOrigin="0.5,0.5"/>
-                </Border>
-
-                <TextBlock Margin="20,0,20,0" FontFamily="Modern No. 20" FontSize="13 "  
-				RenderTransformOrigin="0.517,0.379" ><Run Text="Confirm password "/><Run Foreground="Red" FontSize="18" FontWeight="Bold" Text="*"/></TextBlock>
-                <Border CornerRadius="15" BorderThickness="1" BorderBrush="LightGray" SnapsToDevicePixels="True" Background="White" Height="30" Margin="5 0 5 0">
-                    <PasswordBox Margin="15 0" Background="Transparent" Padding="25 7" x:Name="ConfirmPasswordTxtBlock" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Disabled" 
-				VerticalContentAlignment="Center" TabIndex="3" RenderTransformOrigin="0.5,0.5"/>
-                </Border>
-
-                
-
-                <TextBlock Margin="20,5,20,0" VerticalAlignment="Top" Height="29" FontFamily="Modern No. 20" FontSize="13" Background="Transparent" RenderTransformOrigin="0.517,0.379" ><Run Foreground="Red" FontSize="18" FontWeight="Bold" Text="*"/><Run Text=" Requided fields"/></TextBlock>
+                <TextBlock Margin="20,0,20,0" FontSize="13">
+                    <Run Text="Confirm password "/>
+                    <Run Foreground="Red" FontSize="18" FontWeight="Bold" Text="*"/>
+                </TextBlock>
+                <Border CornerRadius="15" 
+                        Background="White" 
+                        Height="30" 
+                        Margin="5 0 5 0">
+                    <PasswordBox Margin="15 0" 
+                                 Background="Transparent" 
+                                 Padding="25 0" 
+                                 x:Name="ConfirmPasswordTxtBlock" 
+                                 BorderBrush="{x:Null}"/>
+                </Border> 
+                <TextBlock Margin="20 10">
+                    <Run Foreground="Red" FontSize="18" FontWeight="Bold" Text="*"/>
+                    <Run Text=" Requided fields"/>
+                </TextBlock>
             </StackPanel>
-            <Border CornerRadius="15" Margin="20 5 20,0" Padding="7" Background="#FF0B1517" MinWidth="260" SnapsToDevicePixels="True"
-				VerticalAlignment="Center" HorizontalAlignment="Center" Width="277.75">
-                <Button x:Name="Btn" Click="Btn_Click" Background="Transparent" Content="Registration" FontFamily="Modern No. 20" BorderThickness="0" Foreground="White" FontSize="16" 
-					Margin="20,0,25,0" HorizontalAlignment="Center">
-                    <Button.Template>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <ContentPresenter Content="{TemplateBinding Content}"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
+            <Border CornerRadius="15" Margin="20 5" Padding="3" Background="#FF0B1517" MinWidth="260" >
+                <Button x:Name="Btn" 
+                        Click="BtnRegistration_Click" 
+                        Background="Transparent" 
+                        Content="Registration" 
+                        BorderThickness="0" 
+                        Foreground="White" 
+                        FontSize="18" 
+					    Margin="20,0,25,0" 
+                        HorizontalAlignment="Center" />
             </Border>
         </StackPanel>        
     </Grid>

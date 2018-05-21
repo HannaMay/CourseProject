@@ -9,78 +9,82 @@
              mc:Ignorable="d"              
              Width="auto"
              FontFamily="Modern №20" 
-             FontSize="14">
-    <Viewbox HorizontalAlignment="Center" VerticalAlignment='Center'>
+             FontSize="18">
+    
         <Grid Background="White">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="380"/>
+                    <RowDefinition Height="auto"/>
                     <RowDefinition Height="150"/>
-                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto" MaxWidth="480"/>
                     <ColumnDefinition MinWidth="490"/>
-                </Grid.ColumnDefinitions>
-                <Image x:Name="CardInfoMainImg" Grid.Column="0" MaxHeight="360" Source="../Resources/Image/pion.jpg" Margin="15" Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Top" Height="360" Width="360" />
-                <StackPanel Grid.Column="1" Grid.Row="0" Margin="10">
-                    <TextBlock x:Name="EventNameCardMoreInfo" FontSize="26" FontWeight="Bold" Margin="0 0 10 10">
-                    <Run Text="Even Name"/>
+                    <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+                <Image x:Name="CardInfoMainImg" Grid.Column="0" Grid.Row="0" MaxHeight="360" Source="../Resources/Image/pion.jpg" Margin="15 15 0 0" Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Top" Height="360" Width="auto" />
+                <StackPanel Grid.Column="1" Grid.Row="0" Margin="20 10 10 10" HorizontalAlignment="Left">
+                    <TextBlock x:Name="EventNameCardMoreInfo" FontSize="28" FontWeight="Bold" Margin="0 5 10 10">
+                        <Run Text="Even Name"/>
                     </TextBlock>
-                    <TextBlock x:Name="GenresCardMoreInfo" TextWrapping="Wrap" FontSize="14" Padding="0 5 0 5" >
-                    <Run Text="Genres: "/>
-                    </TextBlock>
-                    <TextBlock x:Name="YearCardMoreInfo" TextWrapping="Wrap" FontSize="14" Padding="0 5 0 5" >
-                    <Run Text="Year: "/>
-                    </TextBlock>
-                    <TextBlock x:Name="CountryCardMoreInfo" TextWrapping="Wrap" FontSize="14" Padding="0 5 0 5" >
-                    <Run Text="Country: "/>
-                    <Run/>
-                    </TextBlock>
-                    <TextBlock x:Name="TimeCardMoreInfo" TextWrapping="Wrap" FontSize="14" Padding="0 5 0 5" >
-                    <Run Text="Time"/>
-                    </TextBlock>
-                    <TextBlock x:Name="RatingCardMoreInfo" TextWrapping="Wrap" FontSize="14" Padding="0 5 0 5" >
-                    <Run Text="Rating"/>
-                    </TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Genres: " Padding="0 5 0 5"/>
+                        <TextBlock x:Name="GenresCardMoreInfo" TextWrapping="Wrap" Padding="0 5 0 5" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Year: " Padding="0 5 0 5"/>
+                        <TextBlock x:Name="YearCardMoreInfo" TextWrapping="Wrap" Padding="0 5 0 5" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Country: " Padding="0 5 0 5"/>
+                        <TextBlock x:Name="CountryCardMoreInfo" TextWrapping="Wrap" Padding="0 5 0 5" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Time: " Padding="0 5 0 5"/>
+                        <TextBlock x:Name="TimeCardMoreInfo" TextWrapping="Wrap" Padding="0 5 0 5" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="At the box office: " Padding="0 5 0 5"/>
+                        <TextBlock x:Name="BoxOfficeCardMoreInfo" TextWrapping="Wrap"  Padding="0 5 0 5" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Rating: " Padding="0 5 0 5"/>
+                        <TextBlock x:Name="RatingCardMoreInfo" TextWrapping="Wrap"  Padding="0 5 0 5" />
+                    </StackPanel>
                 </StackPanel>
-                <StackPanel Grid.ColumnSpan="2" Grid.Row="1" Margin="10" >
-                    <TextBlock x:Name="DescCardMoreInfo" TextWrapping="Wrap" FontSize="14" Padding="0 5 0 5"  FontWeight="Bold">
+                <materialDesign:PopupBox x:Name="PuppepBoxMore" PlacementMode="BottomAndAlignRightEdges" ToggleCheckedContentClick="PupupBox_Click" Grid.Column="2" Grid.Row="0" Margin="0 15 15 0" Padding="2 0 2 0" Width="25" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top">
+                    <StackPanel MinWidth="40">
+                        <Button Click="AddToFavoriteOn_Click" x:Name="FavoriteItem" Background="Transparent" Padding="5">
+                                <materialDesign:PackIcon Kind="Star" Foreground="Black" Height="35" Width="35" />
+                        </Button>
+                        <Button Click="AddToFavoriteOff_Click" x:Name="FavoriteItemFull" Visibility="Collapsed" Background="Transparent" Padding="5" >
+                        <materialDesign:PackIcon Kind="Star" Foreground="#73d9d4" Height="35" Width="35" />
+                        </Button>
+                        <Button Click="WrittingComments_Click" x:Name="CommentsItem"  Background="Transparent" Padding="5">
+                            <materialDesign:PackIcon Kind="CommentPlusOutline"  Height="35" Width="35"/>
+                        </Button>
+                    </StackPanel>
+                </materialDesign:PopupBox>
+
+                
+            
+            <StackPanel Grid.ColumnSpan="2" Grid.Row="1" Margin="10" >
+                    <TextBlock x:Name="DescCardMoreInfo" TextWrapping="Wrap" FontSize="20" Padding="0 5 0 5"  FontWeight="Bold">
                     <Run Text="Description: "/>
                     </TextBlock>
-                    <TextBlock x:Name="DescriptionCardMoreInfo" TextWrapping="Wrap" FontSize="14" Padding="0 5 0 10" >
-                    <Run>
-                        infooooo
-                    </Run>
+                    <TextBlock x:Name="DescriptionCardMoreInfo" TextWrapping="Wrap" Padding="0 5 0 10" >
+                        <Run>
+                            infooooo
+                        </Run>
                     </TextBlock>                   
-                </StackPanel>
-                <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Border Height="100">
-                        <Button x:Name="BtnSlidedPrevious" Click="PreviousSlide" Cursor="Hand" >
-                            <Button.Template>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <ContentPresenter Content="{TemplateBinding Content}"/>
-                                </ControlTemplate>
-                            </Button.Template>
-                            <Image Source="../Resources/Image/ArrowLeft.png" Width="50" />
-                        </Button>
-                    </Border>
-                    <!--Source="../Resources/Image/TestImage/princes1.jpg"-->
-                    <WrapPanel Name="Images" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" ItemWidth="60" ItemHeight="60" Background="AntiqueWhite">
-
-                    </WrapPanel>
-                    <Border Height="100" >
-                        <Button x:Name="BtnSlideNext" Click="NextSlide" Cursor="Hand">
-                            <Button.Template>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <ContentPresenter Content="{TemplateBinding Content}"/>
-                                </ControlTemplate>
-                            </Button.Template>
-                            <Image Source="../Resources/Image/ArrowRight.png" Width="50"/>
-                        </Button>
-                    </Border>
-                </StackPanel>
+                </StackPanel>                
+                <ScrollViewer  Grid.Row="2" Grid.ColumnSpan="2" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="5"  >
+                    <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center"  Height="auto">
+                        <WrapPanel Name="Images" HorizontalAlignment="Center" Margin="20" MinHeight="150"  VerticalAlignment="Center" Cursor="Hand"/>
+                    </StackPanel>
+                </ScrollViewer>                  
             </Grid>
         </Grid>
-    </Viewbox>
+    
 </UserControl>

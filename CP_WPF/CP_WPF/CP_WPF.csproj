@@ -44,9 +44,6 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServerCompact, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.SqlServerCompact.6.2.0\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
-    </Reference>
     <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -56,9 +53,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
-    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -80,12 +74,31 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AsyncClient.cs" />
+    <Compile Include="Model\CurrentUser.cs" />
     <Compile Include="Model\Validation.cs" />
     <Compile Include="View\CardItem.xaml.cs">
       <DependentUpon>CardItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\CardItemCinema.xaml.cs">
+      <DependentUpon>CardItemCinema.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CardItemConcert.xaml.cs">
+      <DependentUpon>CardItemConcert.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CardItemExhibition.xaml.cs">
+      <DependentUpon>CardItemExhibition.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CardItemMoreInfo.xaml.cs">
       <DependentUpon>CardItemMoreInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CardItemMoreInfoCinema.xaml.cs">
+      <DependentUpon>CardItemMoreInfoCinema.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CardItemMoreInfoConcert.xaml.cs">
+      <DependentUpon>CardItemMoreInfoConcert.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CardItemMoreInfoExhibition.xaml.cs">
+      <DependentUpon>CardItemMoreInfoExhibition.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\LogInControl.xaml.cs">
       <DependentUpon>LogInControl.xaml</DependentUpon>
@@ -96,6 +109,12 @@
     <Compile Include="View\MainMenuxaml.xaml.cs">
       <DependentUpon>MainMenuxaml.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\NotFound.xaml.cs">
+      <DependentUpon>NotFound.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Search.xaml.cs">
+      <DependentUpon>Search.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SignUpControl.xaml.cs">
       <DependentUpon>SignUpControl.xaml</DependentUpon>
     </Compile>
@@ -103,7 +122,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\CardItemCinema.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CardItemConcert.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CardItemExhibition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\CardItemMoreInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CardItemMoreInfoCinema.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CardItemMoreInfoConcert.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CardItemMoreInfoExhibition.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,6 +171,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\LogInControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NotFound.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Search.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -226,12 +277,18 @@
     <Resource Include="Resources\Image\TestImage\princes4.jpg" />
     <Resource Include="Resources\Image\TestImage\princes5.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Notfound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\FullStarYellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\FullStarWhite.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
-    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
-    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
-    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
-    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>

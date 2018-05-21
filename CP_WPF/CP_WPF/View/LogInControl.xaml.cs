@@ -32,5 +32,13 @@ namespace CP_WPF.View
             win.MainWindowCP.Children.Clear();
             win.MainWindowCP.Children.Add(new SignUpControl(win));
         }
+
+        private void LogInBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+            MainMenuxaml mainMenuxaml = new MainMenuxaml();
+            win.Close();
+            mainMenuxaml.Show();
+        }
     }
 }

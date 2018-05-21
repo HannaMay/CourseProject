@@ -34,18 +34,24 @@ namespace CP_WPF.View
             win.MainWindowCP.Children.Add(new LogInControl(win));
         }
 
-        private void Btn_Click(object sender, RoutedEventArgs e)
+        private void BtnRegistration_Click(object sender, RoutedEventArgs e)
         {
-            User user = new User
-            {
-                Id = 1,
-                Name = "fox",
-                UserName = "hedgehog",
-                Password = "12345"
-            };
-            AsyncClient.SetUser(user);
             AsyncClient.SetTypeInfo(TypeOfInfo.User);
             AsyncClient.StartClient();
+            User user = new User
+            {
+                Id =1,
+                Name = this.Name.Text,
+                UserName = this.Username.Text,
+                Password = this.Password.Password
+            };
+            AsyncClient.SetUser(user);
+            AsyncClient.StartClient();
+            AsyncClient.SetTypeInfo(TypeOfInfo.Users);
+            AsyncClient.StartClient();
+            MainMenuxaml mainMenuxaml = new MainMenuxaml();
+            win.Close();
+            mainMenuxaml.Show();
         }
     }
 }
