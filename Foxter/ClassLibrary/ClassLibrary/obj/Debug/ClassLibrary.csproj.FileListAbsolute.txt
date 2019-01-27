@@ -1,0 +1,41 @@
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\FoxsterServer\ClassLibrary\bin\Debug\ClassLibrary.dll
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\FoxsterServer\ClassLibrary\bin\Debug\ClassLibrary.pdb
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\FoxsterServer\ClassLibrary\obj\Debug\ClassLibrary.csproj.CoreCompileInputs.cache
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\FoxsterServer\ClassLibrary\obj\Debug\ClassLibrary.dll
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\FoxsterServer\ClassLibrary\obj\Debug\ClassLibrary.pdb
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\FoxsterServer\ClassLibrary\obj\Debug\ClassLibrary.csprojResolveAssemblyReference.cache
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\ClassLibrary\ClassLibrary\bin\Debug\ClassLibrary.dll
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\ClassLibrary\ClassLibrary\bin\Debug\ClassLibrary.pdb
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.csprojResolveAssemblyReference.cache
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.csproj.CoreCompileInputs.cache
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.dll
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.pdb
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\ClassLibrary\ClassLibrary\bin\Debug\ClassLibrary.dll.config
+D:\Hannika\CP\ClassLibrary\ClassLibrary\bin\Debug\ClassLibrary.dll.config
+D:\Hannika\CP\ClassLibrary\ClassLibrary\bin\Debug\ClassLibrary.dll
+D:\Hannika\CP\ClassLibrary\ClassLibrary\bin\Debug\ClassLibrary.pdb
+D:\Hannika\CP\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.csprojResolveAssemblyReference.cache
+D:\Hannika\CP\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.csproj.CoreCompileInputs.cache
+D:\Hannika\CP\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.dll
+D:\Hannika\CP\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.pdb
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\Новая папка\ClassLibrary\ClassLibrary\bin\Debug\ClassLibrary.dll.config
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\Новая папка\ClassLibrary\ClassLibrary\bin\Debug\ClassLibrary.dll
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\Новая папка\ClassLibrary\ClassLibrary\bin\Debug\ClassLibrary.pdb
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\Новая папка\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.csprojResolveAssemblyReference.cache
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\Новая папка\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.csproj.CoreCompileInputs.cache
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\Новая папка\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.dll
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\Новая папка\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.pdb
+D:\Универ\Андрей\CP\ClassLibrary\ClassLibrary\bin\Debug\ClassLibrary.dll.config
+D:\Универ\Андрей\CP\ClassLibrary\ClassLibrary\bin\Debug\ClassLibrary.dll
+D:\Универ\Андрей\CP\ClassLibrary\ClassLibrary\bin\Debug\ClassLibrary.pdb
+D:\Универ\Андрей\CP\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.csprojAssemblyReference.cache
+D:\Универ\Андрей\CP\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.csproj.CoreCompileInputs.cache
+D:\Универ\Андрей\CP\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.dll
+D:\Универ\Андрей\CP\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.pdb
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\CP\ClassLibrary\ClassLibrary\bin\Debug\ClassLibrary.dll.config
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\CP\ClassLibrary\ClassLibrary\bin\Debug\ClassLibrary.dll
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\CP\ClassLibrary\ClassLibrary\bin\Debug\ClassLibrary.pdb
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\CP\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.csprojResolveAssemblyReference.cache
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\CP\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.csproj.CoreCompileInputs.cache
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\CP\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.dll
+D:\Документы\Университет\4 семестр\ООТП\Курсовой\CP\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.pdb
